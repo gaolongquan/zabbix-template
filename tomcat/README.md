@@ -8,11 +8,7 @@ yum安装
 - tomcat 8.x
 - tomcat统一路径
 
-/data/web/tomcat_1
-
-/data/web/tomcat_2
-
-/data/web/tomcat_3
+例如 /data/web/{tomcat_1,tomcat_2,tomcat_3}
 
 监控项目
 - 堆对象内存状态
@@ -23,10 +19,10 @@ yum安装
 
 部署步骤
 
-## 一、导入xml文件，添加主机
-## 二、发现脚本
-## 三、定义key
-## 四、jmx配置
+### 一、导入xml文件，添加主机
+### 二、发现脚本
+### 三、定义key
+### 四、jmx配置
 
 在bin/catalina.sh添加这几行
 ```shell
@@ -36,9 +32,9 @@ export CATALINA_OPTS="$CATALINA_OPTS -Djava.rmi.server.hostname=172.18.94.193"
 export CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote.port=60008"
 export CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote.ssl=false"
 export CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote.authenticate=false"
-```shell 
+```
 
-## 五、重启服务
+### 五、重启服务
 
 重启tomcat
 
