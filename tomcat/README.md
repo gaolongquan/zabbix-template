@@ -1,5 +1,5 @@
 # zabbix通过jmx监控tomcat多实例
-jmx（Java Management Extensions，即Java管理扩展
+jmx（Java Management Extensions),即Java管理扩展。
 
 环境
 - zabbix3.4  
@@ -7,8 +7,11 @@ yum安装
 - java 1.8
 - tomcat 8.x
 - tomcat统一路径
+
 /data/web/tomcat_1
+
 /data/web/tomcat_2
+
 /data/web/tomcat_3
 
 监控项目
@@ -20,20 +23,22 @@ yum安装
 
 部署步骤
 
-##一、导入xml文件，添加主机
-##二、发现脚本
-##三、定义key
-##四、jmx配置
+## 一、导入xml文件，添加主机
+## 二、发现脚本
+## 三、定义key
+## 四、jmx配置
 
 在bin/catalina.sh添加这几行
+```shell
 # ----- Execute The Requested Command -----------------------------------------
 export CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote"
 export CATALINA_OPTS="$CATALINA_OPTS -Djava.rmi.server.hostname=172.18.94.193"
 export CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote.port=60008"
 export CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote.ssl=false"
 export CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote.authenticate=false"
+```shell 
 
-##五、重启服务
+## 五、重启服务
 
 重启tomcat
 
